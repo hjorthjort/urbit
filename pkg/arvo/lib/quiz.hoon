@@ -6,18 +6,19 @@
   =+  sax=(slot 6 vax)
   =+  run-i=0
   =+  rng=~(. og eny)
+  =+  drop=0
   |-  ^-  ?
   ?:  =(run-i runs)
-      ~&  success-runs+run-i
+      ~&  [success-runs+run-i drops+drop]
       %.y
   =+  sam=(~(fill quiz [size rng]) sax)
   =+  res=(slam vax sam)
-  ?:  =(+:res %.y)
-    :: Arbitrarily chosen growth pace.
-    =+  new-size=(add +(size) (div (mul size 2) 21))
-    $(run-i +(run-i), rng +:(rads:rng 1), size new-size)
-  ~&  fail-with-sam+q.sam
-  %.n
+  ?:  =(q.res %.n)
+    ~&  fail-with-sam+q.sam  %.n
+  =?  drop  =(q.res %drop)  +(drop)
+  :: Arbitrarily chosen growth pace.
+  =+  new-size=(add +(size) (div (mul size 2) 21))
+  $(run-i +(run-i), rng +:(rads:rng 1), size new-size)
 ++  quiz
   |_  [size=@ud rng=_og]
   ++  split-rng

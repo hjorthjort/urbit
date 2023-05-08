@@ -19,4 +19,7 @@
 ++  test-noun
   =+  fate=!>(|=([a=* b=*] ^-(? |(=(a b) ?!(=((sham a) (sham b)))))))
   %-  expect  !>((check:quiz fate))
+++  test-drop
+  =+  fate=!>(|=([a=@ud b=@ud] ^-($?(? %drop) ?:((lth a b) %drop =((add b (sub a b)) a)))))
+  %-  expect  !>((check:quiz fate))
 --
