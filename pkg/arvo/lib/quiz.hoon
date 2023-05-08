@@ -1,5 +1,6 @@
+/+  test
 |_  [eny=@uv runs=@ud]
-++  check
+++  cheek
   |=  vax=vase
   =?  runs  =(0 runs)  100
   =+  size=1
@@ -7,18 +8,31 @@
   =+  run-i=0
   =+  rng=~(. og eny)
   =+  drop=0
-  |-  ^-  ?
+  |-  ^-  [? tank]
   ?:  =(run-i runs)
-      ~&  [success-runs+run-i drops+drop]
-      %.y
+      :-  %.y
+      =/  msg  :~  leaf+(a-co:co run-i)
+                   'successful runs,'
+                   leaf+(a-co:co drop)
+                   'dropped samples'
+                ==
+      [%rose [" " "" ""] msg]
   =+  sam=(~(fill quiz [size rng]) sax)
   =+  res=(slam vax sam)
   ?:  =(q.res %.n)
-    ~&  fail-with-sam+q.sam  %.n
+    :-  %.n
+    [%rose [" " "" ""] 'failed case:' (cain sam) ~]
   =?  drop  =(q.res %drop)  +(drop)
   :: Arbitrarily chosen growth pace.
   =+  new-size=(add +(size) (div (mul size 2) 21))
   $(run-i +(run-i), rng +:(rads:rng 1), size new-size)
+++  check
+  |=  vax=vase
+  ^-  tang
+  =+  res=(cheek vax)
+  ?:  -:res
+    ~
+  [+:res ~]
 ++  quiz
   |_  [size=@ud rng=_og]
   ++  split-rng
