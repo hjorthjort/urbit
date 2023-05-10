@@ -1,5 +1,6 @@
 /+  test
 |_  [eny=@uv runs=@ud]
+:: Test and return success status and messages.
 ++  cheek
   |=  vax=vase
   =?  runs  =(0 runs)  100
@@ -26,6 +27,7 @@
   :: Arbitrarily chosen growth pace.
   =+  new-size=(add +(size) (div (mul size 2) 21))
   $(run-i +(run-i), rng +:(rads:rng 1), size new-size)
+:: Test and return a tang for consumption by the standard test library.
 ++  check
   |=  vax=vase
   ^-  tang
