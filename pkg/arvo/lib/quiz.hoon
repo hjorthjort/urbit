@@ -12,17 +12,20 @@
   |-  ^-  [? tank]
   ?:  =(run-i runs)
       :-  %.y
-      =/  msg  :~  leaf+(a-co:co run-i)
-                   'successful runs,'
-                   leaf+(a-co:co drop)
-                   'dropped samples'
-                ==
-      [%rose [" " "" ""] msg]
+      :~  %rose  [" " ~ ~]
+          leaf+(a-co:co run-i)
+          'successful runs,'
+          leaf+(a-co:co drop)
+          'dropped samples'
+       ==
   =+  sam=(~(fill quiz [size rng]) sax)
   =+  res=(slam vax sam)
   ?:  =(q.res %.n)
     :-  %.n
-    [%rose [" " "" ""] 'failed case:' (cain sam) ~]
+    :~  %rose  [" " ~ ~]
+        'failed case:'
+        (cain sam)
+    ==
   =?  drop  =(q.res %drop)  +(drop)
   :: Arbitrarily chosen growth pace.
   =+  new-size=(add +(size) (div (mul size 2) 21))
